@@ -26,3 +26,5 @@ gem 'shoulda'
 
 gem 'devise'
 gem 'haml-rails'
+
+gem 'bootstrap-wysihtml5-rails'

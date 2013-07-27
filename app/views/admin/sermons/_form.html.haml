@@ -11,7 +11,7 @@
     = f.text_field :title
   .field
     = f.label :body
-    = f.text_area :body
+    = f.text_area :body, class: 'wysihtml5', size: "30x20"
   .field
     = f.label :date
     = f.date_select :date

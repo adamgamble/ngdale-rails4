@@ -9,8 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-wysihtml5
  */
 
 body {
   padding: 80px;
+}
+
+.wysihtml5 {
+  width: 800px;
 }
