@@ -17,5 +17,8 @@
             %li.divider-vertical
             %li{ class: current_page?(admin_sermons_path) ? "active" : "" }
               = link_to "Sermons", admin_sermons_path
+          %ul.nav.pull-right
+            %li
+              = link_to "Logout", destroy_user_session_path, :method => :delete
     .container
       = yield
