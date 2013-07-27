@@ -1,4 +1,4 @@
-- Sermon.limit(3).all.each_with_index do |sermon, index|
+- Sermon.limit(3).order("date DESC").all.each_with_index do |sermon, index|
   %section{class: "col1 #{index > 0 ? "pad_left1": nil}"}
     %h4.color2
       %span>="#{sermon.date.strftime("%B ")} #{sermon.date.day.ordinalize}"
