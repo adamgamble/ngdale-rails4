@@ -11,10 +11,11 @@
       .navbar-inner
         .container
           %a.brand{href: "/admin"}
-            North Gardendale church of Christ - 
             %strong Admin Panel
           %ul.nav
             %li.divider-vertical
+            %li{class: current_page?(admin_root_path) ? "active" : ""}
+              = link_to "Home", admin_root_path
             %li{ class: current_page?(admin_sermons_path) ? "active" : "" }
               = link_to "Sermons", admin_sermons_path
           %ul.nav.pull-right
