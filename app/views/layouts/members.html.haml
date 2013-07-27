@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css", "data-turbolinks-track" => true
+    = stylesheet_link_tag "members/members"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{href: root_url}
+            %strong Members Panel
+          -if current_user
+            %ul.nav
+              %li{class: current_page?(members_root_path) ? "active" : ""}
+                = link_to "Home", members_root_path
+              - if current_user && current_user.admin?
+                %li
+                  = link_to "Admin Panel", admin_root_path
+              %li
+                = link_to "Member Directory", "#"
+            %ul.nav.pull-right
+              %li
+                = link_to "Logout", destroy_user_session_path, :method => :delete
+    .container
+      = yield

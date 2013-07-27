@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @sermon.title
+%p
+  %b Body:
+  = @sermon.body
+%p
+  %b Date:
+  = @sermon.date
+%p
+  %b Summary:
+  = @sermon.summary
+
+= link_to 'Edit', edit_admin_sermon_path(@sermon)
+\|
+= link_to 'Back', admin_sermons_path

@@ -1,0 +1,22 @@
+= form_for @sermon, url: admin_sermon_path(@sermon) do |f|
+  - if @sermon.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sermon.errors.count, "error")} prohibited this sermon from being saved:"
+      %ul
+        - @sermon.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :body
+    = f.text_area :body
+  .field
+    = f.label :date
+    = f.date_select :date
+  .field
+    = f.label :summary
+    = f.text_area :summary
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css", "data-turbolinks-track" => true
+    = stylesheet_link_tag "admin/admin"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{href: "/admin"}
+            North Gardendale church of Christ - 
+            %strong Admin Panel
+          %ul.nav
+            %li.divider-vertical
+            %li{ class: current_page?(admin_sermons_path) ? "active" : "" }
+              = link_to "Sermons", admin_sermons_path
+    .container
+      = yield

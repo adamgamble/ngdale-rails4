@@ -1,0 +1,9 @@
+- Sermon.limit(3).all.each_with_index do |sermon, index|
+  %section{class: "col1 #{index > 0 ? "pad_left1": nil}"}
+    %h4.color2
+      %span>="#{sermon.date.strftime("%B ")} #{sermon.date.day.ordinalize}"
+      = sermon.date.year
+    %p.pad_bot2
+      %strong= sermon.title
+    %p= sermon.summary 
+    = link_to "Listen Now", sermon, class: "button2"

@@ -1,0 +1,100 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title Home
+    %meta{:charset => "utf-8"}/
+    = stylesheet_link_tag    "reset", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "layout", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "style", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "cufon-yui.js", "data-turbolinks-track" => true
+    = javascript_include_tag "cufon-replace.js", "data-turbolinks-track" => true
+    = javascript_include_tag "Vegur_700.font.js", "data-turbolinks-track" => true
+    = javascript_include_tag "Vegur_400.font.js", "data-turbolinks-track" => true
+    = javascript_include_tag "Vegur_300.font.js", "data-turbolinks-track" => true
+    = javascript_include_tag "jquery.easing.1.3.js", "data-turbolinks-track" => true
+    = javascript_include_tag "tms-0.3.js", "data-turbolinks-track" => true
+    = javascript_include_tag "tms_presets.js", "data-turbolinks-track" => true
+    = javascript_include_tag "backgroundPosition.js", "data-turbolinks-track" => true
+    = javascript_include_tag "atooltip.jquery.js", "data-turbolinks-track" => true
+    = javascript_include_tag "script.js", "data-turbolinks-track" => true
+    = javascript_include_tag "tabs.js", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script type="text/javascript" src="js/html5.js"></script>
+      <style type="text/css">
+      \.box1 figure {behavior:url(js/PIE.htc)}
+      </style>
+    /[if lt IE 7]
+      <div style='clear:both;text-align:center;position:relative'>
+      <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0" alt="" /></a>
+      </div>
+  %body#page1
+    .body1
+      .main
+        / header
+        %header
+          .wrapper
+            %h1
+              #logo{:href => "/"}
+                North Gardendale 
+              %br/
+              %br/
+              %br/
+              #logo_small church of Christ
+            %nav
+              %ul#top_nav
+                %li
+                  %a{:href => "/"}
+                    %img{:alt => "", :src => "/images/top_icon1.gif"}/
+                %li
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => "/images/top_icon2.gif"}/
+                %li.end
+                  %a{:href => "/contact"}
+                    %img{:alt => "", :src => "/images/top_icon3.gif"}/
+            %nav
+              %ul#menu
+                %li{:id => request.path == "/" ? "menu_active" : ""}
+                  %a{:href => "/"} Home
+                %li{:id => request.path == "/about" ? "menu_active" : ""}
+                  %a{:href => "/about"} About Us
+                %li{:id => request.path == "/location" ? "menu_active" : ""}
+                  %a{:href => "/location"} Location
+                %li{:id => request.path == "/services" ? "menu_active" : ""}
+                  %a{:href => "/services"} Services
+                %li{:id => request.path == "/members" ? "menu_active" : ""}
+                  %a{:href => "/members"} Members
+                %li{:id => request.path == "/contact" ? "menu_active" : ""}
+                  %a{:href => "/contact"} Contact Us
+        .ic
+        = yield
+        .wrapper
+          %ul#icons
+            %li
+              %a.normaltip{:href => "https://www.facebook.com/pages/North-Gardendale-church-of-Christ/246315291774", :title => "Facebook"}
+                %img{:alt => "", :src => "/images/icon1.gif"}/
+        .wrapper
+          %nav
+            %ul#footer_menu
+              %li.active
+                %a{:href => "/"} Home
+              %li
+                %a{:href => "/about"} About Us
+              %li
+                %a{:href => "/location"} Location
+              %li
+                %a{:href => "/services"} Services
+              %li
+                %a{:href => "/admin"} Admin
+              %li.end
+                %a{:href => "/contact"} Contact Us
+          .tel
+            %span> +1 205 
+            &nbsp;
+            631-8415
+        :javascript
+          $(document).ready(function() {
+            Cufon.now();
+            tabs.init()
+          }

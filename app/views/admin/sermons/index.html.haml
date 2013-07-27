@@ -1,0 +1,28 @@
+%h1 Listing sermons
+
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li
+        = link_to 'New Sermon', new_admin_sermon_path
+
+%table.table.table-bordered
+  %tr
+    %th Title
+    %th Body
+    %th Date
+    %th Summary
+    %th
+    %th
+    %th
+
+  - @sermons.each do |sermon|
+    %tr
+      %td= sermon.title
+      %td= sermon.body
+      %td= sermon.date
+      %td= sermon.summary
+      %td= link_to 'Show', admin_sermon_path(sermon)
+      %td= link_to 'Edit', edit_admin_sermon_path(sermon)
+      %td= link_to 'Destroy', admin_sermon_path(sermon), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
