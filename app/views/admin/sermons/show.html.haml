@@ -1,18 +1,16 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @sermon.title
-%p
-  %b Body:
-  = @sermon.body
-%p
-  %b Date:
-  = @sermon.date
-%p
-  %b Summary:
-  = @sermon.summary
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li.divider-vertical
+      %li
+        = link_to 'Edit', edit_admin_sermon_path(@sermon)
+      %li.divider-vertical
+      %li
+        = link_to 'Back', admin_sermons_path
+      %li.divider-vertical
 
-= link_to 'Edit', edit_admin_sermon_path(@sermon)
-\|
-= link_to 'Back', admin_sermons_path
+%h1= "#{@sermon.title} - #{@sermon.date}"
+%hr
+= @sermon.body.html_safe

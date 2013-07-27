@@ -3,26 +3,25 @@
 .navbar
   .navbar-inner
     %ul.nav
+      %li.divider-vertical
       %li
         = link_to 'New Sermon', new_admin_sermon_path
+      %li.divider-vertical
 
 %table.table.table-bordered
   %tr
-    %th Title
-    %th Body
     %th Date
+    %th Title
     %th Summary
-    %th
-    %th
     %th
 
   - @sermons.each do |sermon|
     %tr
-      %td= sermon.title
-      %td= sermon.body
       %td= sermon.date
+      %td= sermon.title
       %td= sermon.summary
-      %td= link_to 'Show', admin_sermon_path(sermon)
-      %td= link_to 'Edit', edit_admin_sermon_path(sermon)
-      %td= link_to 'Destroy', admin_sermon_path(sermon), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td 
+        = link_to 'Show', admin_sermon_path(sermon), class: 'btn'
+        = link_to 'Edit', edit_admin_sermon_path(sermon), class: 'btn'
+        = link_to 'Destroy', admin_sermon_path(sermon), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn'
 
