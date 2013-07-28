@@ -1,10 +1,12 @@
 NgdaleRails4::Application.routes.draw do
+
   devise_for :users, :controllers => { :sessions => "users/sessions" }
 
   resources :sermons, :only => [:index, :show]
   namespace :admin do
     root :to => "dashboard#home"
     resources :sermons
+    resources :blog_posts
   end
 
   namespace :members do

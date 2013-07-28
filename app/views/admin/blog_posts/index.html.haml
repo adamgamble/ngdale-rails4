@@ -1,0 +1,22 @@
+%h1 Listing Blog Posts
+
+%table.table.table-bordered
+  %tr
+    %th Title
+    %th Body
+    %th User
+    %th
+
+  - @blog_posts.each do |blog_post|
+    %tr
+      %td= blog_post.title
+      %td= blog_post.body
+      %td= blog_post.user_id
+      %td
+        = link_to 'Show', admin_blog_post_path(blog_post), class: 'btn'
+        = link_to 'Edit', edit_admin_blog_post_path(blog_post), class: 'btn'
+        = link_to 'Destroy', admin_blog_post_path(blog_post), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn'
+
+%br
+
+= link_to 'New Blog post', new_admin_blog_post_path

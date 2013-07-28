@@ -1,0 +1,9 @@
+- @blog_posts.each do |blog_post|
+  .navbar
+    .navbar-inner
+      .brand= blog_post.title
+      .pull-left.navbar-text= blog_post.user.name
+      .pull-right.navbar-text= blog_post.created_at.strftime("%m-%d-%y")
+  .well= blog_post.body.html_safe
+  %br
+= paginate @blog_posts
