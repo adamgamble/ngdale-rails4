@@ -1,4 +1,3 @@
-require 'twilio-ruby'
 class Admin::UpdatesController < Admin::ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:phone_call]
@@ -9,9 +8,9 @@ class Admin::UpdatesController < Admin::ApplicationController
   end
 
   def phone_call
-    twilml = Twilio::TwiML::Response.new do |r|
+    response = Twilio::TwiML::Response.new do |r|
       r.Say 'hello there', :voice => 'alice'
     end
-    render text: twilml
+    render text: response.text
   end
 end
