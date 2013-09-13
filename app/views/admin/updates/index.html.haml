@@ -1,0 +1,26 @@
+%h1 Update Listings
+
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li.divider-vertical
+      %li
+        = link_to 'New Update', new_admin_update_path
+      %li.divider-vertical
+
+%table.table.table-bordered
+  %tr
+    %th Date
+    %th Summary
+    %th
+
+  - @updates.each do |update|
+    %tr
+      %td= update.created_at.strftime("%m-%d-%Y")
+      %td= update.summary
+      %td 
+        = link_to 'Show', admin_update_path(update), class: 'btn'
+        = link_to 'Edit', edit_admin_update_path(update), class: 'btn'
+        = link_to 'Destroy', admin_update_path(update), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn'
+
+
