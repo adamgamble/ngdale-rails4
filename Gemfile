@@ -29,4 +29,4 @@ gem 'haml-rails'
 
 gem 'bootstrap-wysihtml5-rails'
 gem 'kaminari'
-gem 'twilio'
+gem 'twilio-ruby'
