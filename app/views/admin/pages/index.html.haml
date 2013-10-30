@@ -1,0 +1,23 @@
+%h1 Listing Pages
+
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li
+        = link_to 'New Page', new_admin_page_path
+
+%table.table.table-bordered
+  %tr
+    %th Title
+    %th Slug
+    %th
+
+  - @pages.each do |page|
+    %tr
+      %td= page.title
+      %td= page.slug
+      %td 
+        = link_to 'Show', admin_page_path(page), class: 'btn'
+        = link_to 'Edit', edit_admin_page_path(page), class: 'btn'
+        = link_to 'Destroy', admin_page_path(page), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn'
+

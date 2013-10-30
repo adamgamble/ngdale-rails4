@@ -7,6 +7,7 @@ NgdaleRails4::Application.routes.draw do
     root :to => "dashboard#home"
     resources :sermons
     resources :blog_posts
+    resources :pages
     resources :updates do
       collection do
         get :phone_call
