@@ -1,5 +1,6 @@
 NgdaleRails4::Application.routes.draw do
 
+  root :to => "pages#home"
   devise_for :users, :controllers => { :sessions => "users/sessions" }
 
   resources :sermons, :only => [:index, :show]
@@ -19,5 +20,5 @@ NgdaleRails4::Application.routes.draw do
     root :to => "dashboard#home"
   end
 
-  root :to => "pages#home"
+  get '/:slug' => "pages#show"
 end
