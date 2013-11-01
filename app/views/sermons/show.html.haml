@@ -1,0 +1,12 @@
+%article#content.tabs
+  .wrapper
+    .box1
+      .wrapper
+        %section.col4
+          %h2
+            %strong>= @sermon.title[0]
+            =@sermon.title[1..-1]
+          %div
+            %figure.left.marg_right1
+            #body= @sermon.body.try(:html_safe)
+            = link_to "Listen Now", @sermon.audio
