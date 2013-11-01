@@ -13,6 +13,9 @@
     = f.label :body
     = f.text_area :body, class: 'wysihtml5', size: "30x20"
   .field
+    = f.label :audio
+    = f.file_field :audio
+  .field
     = f.label :date
     = f.date_select :date
   .field
