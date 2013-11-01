@@ -9,4 +9,6 @@
           %div
             %figure.left.marg_right1
             #body= @sermon.body.try(:html_safe)
-            = link_to "Listen Now", @sermon.audio.to_s, class: "button2"
+            %audio{:controls => ""}
+              %source{:src => @sermon.audio.to_s, :type => "audio/mpeg"}
+            = link_to "Download", @sermon.audio.to_s, class: "button2"
