@@ -28,6 +28,6 @@ class Admin::PagesController < Admin::ApplicationController
 
   protected
   def page_params
-    params.require(:page).permit(:title, :name, :body)
+    params.require(:page).permit(:title, :name, :body, :image)
   end
 end

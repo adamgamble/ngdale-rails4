@@ -1,4 +1,4 @@
-= form_for @page, url: admin_page_path(@page) do |f|
+= form_for @page, url: admin_page_path(@page), html: { :multipart => true } do |f|
   - if @page.errors.any?
     #error_explanation
       %h2= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
@@ -12,6 +12,9 @@
   .field
     = f.label :name
     = f.text_field :name
+  .field
+    = f.label :image
+    = f.file_field :image
   .field
     = f.label :body
     = f.text_area :body, class: 'wysihtml5', size: "30x20"
