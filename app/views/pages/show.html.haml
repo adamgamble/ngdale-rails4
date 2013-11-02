@@ -8,5 +8,5 @@
             =@page.name[1..-1]
           %div
             %figure.left.marg_right1
-              %img#image{:style => "width: 250px; height: 180px;", :alt => "", :src => @page.image || "images/page3_img1.jpg"}/
+              %img#image{:style => "width: 250px; height: 180px;", :alt => "", :src => @page.image.url(:small)}/
             #body=@page.body.try(:html_safe)
