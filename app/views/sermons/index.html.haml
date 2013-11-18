@@ -1,0 +1,21 @@
+%article#content.tabs
+  .wrapper
+    .box1
+      .wrapper
+        %section.col4
+          %h2
+            %strong> S
+            ermons
+          %div
+            #body
+              %table
+                %tr
+                  %th Date
+                  %th Title
+                  %th Preacher
+                - @sermons.each do |sermon|
+                  %tr
+                    %td= sermon.date
+                    %td= link_to sermon.title, sermon
+                    %td= sermon.preacher
+              = paginate @sermons

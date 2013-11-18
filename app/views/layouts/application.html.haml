@@ -4,8 +4,8 @@
     %title Home
     %meta{:charset => "utf-8"}/
     = stylesheet_link_tag    "reset", media: "all", "data-turbolinks-track" => true
-    = stylesheet_link_tag    "layout", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag    "style", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "cufon-yui.js", "data-turbolinks-track" => true
     = javascript_include_tag "cufon-replace.js", "data-turbolinks-track" => true
@@ -16,9 +16,6 @@
     = javascript_include_tag "tms-0.3.js", "data-turbolinks-track" => true
     = javascript_include_tag "tms_presets.js", "data-turbolinks-track" => true
     = javascript_include_tag "backgroundPosition.js", "data-turbolinks-track" => true
-    = javascript_include_tag "atooltip.jquery.js", "data-turbolinks-track" => true
-    = javascript_include_tag "script.js", "data-turbolinks-track" => true
-    = javascript_include_tag "tabs.js", "data-turbolinks-track" => true
     = csrf_meta_tags
     /[if lt IE 9]
       <script type="text/javascript" src="js/html5.js"></script>
@@ -32,12 +29,11 @@
   %body#page1
     .body1
       .main
-        / header
         %header
           .wrapper
             %h1
               #logo{:href => "/"}
-                North Gardendale 
+                North Gardendale
               %br/
               %br/
               %br/
