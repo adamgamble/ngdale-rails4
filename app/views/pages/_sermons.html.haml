@@ -5,5 +5,6 @@
       = sermon.date.year
     %p.pad_bot2
       %strong= sermon.title
+      %strong= " - #{sermon.preacher}"
     %p= sermon.summary 
     = link_to "Listen Now", sermon, class: "button2"
