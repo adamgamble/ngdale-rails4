@@ -4,7 +4,7 @@ class Admin::SermonsController < Admin::ApplicationController
   # GET /sermons
   # GET /sermons.json
   def index
-    @sermons = Sermon.all
+    @sermons = Sermon.order(:date => :desc).all
   end
 
   # GET /sermons/1
